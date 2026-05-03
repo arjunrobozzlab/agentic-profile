@@ -1,16 +1,16 @@
 import { NextResponse } from "next/server";
-import { companyConfig } from "@/config/company.config";
+import { supabase } from "@/lib/supabase";
+
+const SLUG = process.env.COMPANY_SLUG!;
 
 export async function GET() {
-  return NextResponse.json({
-    name: companyConfig.name,
-    tagline: companyConfig.tagline,
-    description: companyConfig.description,
-    location: companyConfig.location,
-    serving: companyConfig.serving,
-    experience_years: companyConfig.experience_years,
-    founded: companyConfig.founded,
-    contact: companyConfig.contact,
-    how_to_hire: companyConfig.how_to_hire,
-  });
+  const { data, error } = await supabase
+    .from("companies")
+    .select("name, tagline, description, location, serving, experience_years, founded, contact, how_to_hire")
+    .eq("slug", SLUG)
+    .eq("active", true)
+    .single();
+
+  if (error || !data) return NextResponse.json({ error: "Company not found" }, { status: 404 });
+  return NextResponse.json(data);
 }
