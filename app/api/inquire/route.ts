@@ -2,7 +2,17 @@ import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import nodemailer from "nodemailer";
 
+const CORS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
+
 const SLUG = process.env.COMPANY_SLUG!;
+
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 204, headers: CORS });
+}
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -42,5 +52,5 @@ export async function POST(request: Request) {
     `,
   });
 
-  return NextResponse.json({ success: true, message: `Inquiry received. ${data.name} will contact you within 24 hours.` });
+  return NextResponse.json({ success: true, message: `Inquiry received. ${data.name} will contact you within 24 hours.` }, { headers: CORS });
 }
