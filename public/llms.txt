@@ -1,0 +1,39 @@
+# Edge Conductor
+
+> Embedded AI and robotics engineering company based in Indore, India. Serving global clients remotely.
+
+Edge Conductor builds AI-powered systems that run on actual hardware — not just in the cloud. Founded by engineers with 13+ years of embedded systems experience.
+
+## Services
+
+- Edge AI Systems: Computer vision and AI models running offline on Raspberry Pi, Jetson Nano. YOLOv8, OpenCV, TensorFlow Lite.
+- Autonomous Robotics: ROS2-based robots with SLAM, LiDAR navigation, autonomous path planning.
+- Industrial IoT: ESP32 devices with WiFi/Ethernet/4G GSM failover, MQTT dashboards, Modbus, RS485.
+- Embedded Firmware & PCB Design: Custom firmware for STM32, ESP32, AVR. PCB design with KiCad.
+
+## Notable Projects
+
+- Hospital patient monitoring robot with fall detection (YOLOv8 + ROS2 + Raspberry Pi, 100% offline)
+- Multi-network IoT device with automatic failover (WiFi → Ethernet → 4G GSM)
+- Truck weighbridge with RFID vehicle detection and RS485 communication
+- Smart water dispenser with QR payment (Razorpay + MQTT)
+- LoRa GPS tracking system for no-network environments (1km range)
+
+## Contact
+
+- Email: edgeconductor@gmail.com
+- Website: https://edgeconductor.com
+- Phone: +91-9522596713
+- Location: Indore, Madhya Pradesh, India
+
+## API
+
+This business exposes an agentic API for AI agents:
+- GET  /api/info      — full company profile
+- GET  /api/services  — services with skills and use cases
+- GET  /api/projects  — portfolio with tags
+- POST /api/inquire   — submit a project inquiry (sends email to owner)
+
+## How to hire
+
+Send project description, target hardware, timeline, and budget to edgeconductor@gmail.com. Response within 24 hours.
