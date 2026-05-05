@@ -1,5 +1,7 @@
 import { companyConfig } from "@/config/company.config";
 
+export const dynamic = "force-dynamic";
+
 const endpoints = [
   {
     method: "GET",

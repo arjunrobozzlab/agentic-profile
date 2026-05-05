@@ -4,8 +4,6 @@
 
 const raw = process.env.COMPANY_CONFIG;
 
-if (!raw) {
-  throw new Error("COMPANY_CONFIG environment variable is not set. See .env.example");
-}
-
-export const companyConfig = JSON.parse(raw);
+export const companyConfig = raw
+  ? JSON.parse(raw)
+  : { name: "", tagline: "", contact: { email: "", website: "" }, location: "" };
